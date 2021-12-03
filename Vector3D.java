@@ -22,6 +22,13 @@ public class Vector3D {
         return z;
     }
 
+    /**
+     * Adds the instance the method is called upon onto the given Vector.
+     *
+     * @param v2    Vector that is added
+     * @return      the new vector
+     */
+
     public Vector3D add(Vector3D v2) {
         int newX = x + v2.getX();
         int newY = y + v2.getY();
@@ -31,10 +38,24 @@ public class Vector3D {
         return sumVector;
     }
 
+    /**
+     * Inverts the given vector and returs the inverted vector.
+     *
+     * @param v1  The vector that will be inverted
+     * @return    The inverted vector.
+     */
+
     public Vector3D invert(Vector3D v1) {
         Vector3D invertedVector = new Vector3D(-x, -y, -z);
         return invertedVector;
     }
+
+    /**
+     * Subtracts the given vector
+     *
+     * @param subtrahendVector
+     * @return the vector containing the differences.
+     */
 
     public Vector3D subtract(Vector3D subtrahendVector) {
         int newX = x - subtrahendVector.getX();
@@ -45,9 +66,22 @@ public class Vector3D {
         return differenceVector;
     }
 
+    /**
+     * Multiplicates the vector with the given scalar
+     *
+     * @param scalar
+     * @return the multiplicated vector
+     */
+
     public Vector3D scalarMultiplication(int scalar) {
         Vector3D scalarMultiplicatedVector = new Vector3D(x * scalar, y * scalar, z * scalar);
         return scalarMultiplicatedVector;
+    }
+
+    @Override
+    public String toString (){
+        String vector = "(" + x + "," + y + "," + z + ")";
+        return vector;
     }
 
 }
