@@ -1,24 +1,24 @@
 public class Vector3D {
 
-    private int x;
-    private int y;
-    private int z;
+    private double x;
+    private double y;
+    private double z;
 
-    public Vector3D(int x, int y, int z) {
+    public Vector3D(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
-    public int getZ() {
+    public double getZ() {
         return z;
     }
 
@@ -30,22 +30,22 @@ public class Vector3D {
      */
 
     public Vector3D add(Vector3D v2) {
-        int newX = x + v2.getX();
-        int newY = y + v2.getY();
-        int newZ = z + v2.getZ();
+        double newX = x + v2.getX();
+        double newY = y + v2.getY();
+        double newZ = z + v2.getZ();
 
         Vector3D sumVector = new Vector3D(newX, newY, newZ);
         return sumVector;
     }
 
     /**
-     * Inverts the given vector and returs the inverted vector.
+     * Inverts the vector and returs the inverted vector.
      *
      * @param v1  The vector that will be inverted
      * @return    The inverted vector.
      */
 
-    public Vector3D invert(Vector3D v1) {
+    public Vector3D invert() {
         Vector3D invertedVector = new Vector3D(-x, -y, -z);
         return invertedVector;
     }
@@ -58,9 +58,9 @@ public class Vector3D {
      */
 
     public Vector3D subtract(Vector3D subtrahendVector) {
-        int newX = x - subtrahendVector.getX();
-        int newY = y - subtrahendVector.getY();
-        int newZ = y - subtrahendVector.getZ();
+        double newX = x - subtrahendVector.getX();
+        double newY = y - subtrahendVector.getY();
+        double newZ = z - subtrahendVector.getZ();
 
         Vector3D differenceVector = new Vector3D(newX, newY, newZ);
         return differenceVector;
@@ -73,14 +73,14 @@ public class Vector3D {
      * @return the multiplicated vector
      */
 
-    public Vector3D scalarMultiplication(int scalar) {
+    public Vector3D scalarMultiplication(double scalar) {
         Vector3D scalarMultiplicatedVector = new Vector3D(x * scalar, y * scalar, z * scalar);
         return scalarMultiplicatedVector;
     }
 
     @Override
     public String toString (){
-        String vector = "(" + x + "," + y + "," + z + ")";
+        String vector = "(" + x + ", " + y + ", " + z + ")";
         return vector;
     }
 

@@ -7,19 +7,19 @@
 
 public class Vector2D {
 
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
-    public Vector2D(int x, int y) {
+    public Vector2D(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
@@ -36,13 +36,13 @@ public class Vector2D {
     }
 
     /**
-     * Inverts the given vector and returs the inverted vector.
+     * Inverts the vector and returs the inverted vector.
      *
      * @param v1  The vector that will be inverted
      * @return    The inverted vector.
      */
 
-    public Vector2D invert(Vector2D v1) {
+    public Vector2D invert() {
         Vector2D invertedVector = new Vector2D(-x, -y);
         return invertedVector;
     }
@@ -55,8 +55,8 @@ public class Vector2D {
      */
 
     public Vector2D subtract(Vector2D subtrahendVector) {
-        int newX = x - subtrahendVector.getX();
-        int newY = y - subtrahendVector.getY();
+        double newX = x - subtrahendVector.getX();
+        double newY = y - subtrahendVector.getY();
 
         Vector2D differenceVector = new Vector2D(newX, newY);
         return differenceVector;
@@ -69,14 +69,14 @@ public class Vector2D {
      * @return the multiplicated vector
      */
 
-    public Vector2D scalarMultiplication(int scalar) {
+    public Vector2D scalarMultiplication(double scalar) {
         Vector2D scalarMultiplicatedVector = new Vector2D(x * scalar, y * scalar);
         return scalarMultiplicatedVector;
     }
 
     @Override
     public String toString (){
-        String vector = "(" + x + "," + y + ")";
+        String vector = "(" + x + ", " + y + ")";
         return vector;
     }
 
